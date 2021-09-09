@@ -1,8 +1,12 @@
 var searchFormEl = document.querySelector('#search-form');
+var searchInputEl = document.querySelector('#search-input');
+var forecast = document.
 var apiKey = "e66890b07f2c3c2712ae08ab7c950f53";
 var url = "api.openweathermap.org/data/2.5/weather?q=";
-var searchInput = [];
 //Full URL: api.openweathermap.org/data/2.5/weather?q={city name}&units=imperial&appid={API key}
+var searchHistory = [];
+
+
 
 
 function searchFormSubmit(event) {
