@@ -46,15 +46,23 @@ function searchFormSubmit(event) {
     event.preventDefault();
 }
 
-function apiCall() {
+function apiCall(location) {
+  var lat = location;
+  var long = location;
+  var city = location.name;
   fetch(`${url} + ${searchInputVal} + &units=imperial&appid= + ${apiKey}`)
-  .then(res => res.json())
+  .then(function (res) {
     console.log(res.json())
     return res.json();
-  };
-  // .then((data) => {
-  //   console.log(data);
-  // })
+  })
+  .then((data) => {
+    console.log(data);
+
+    var searchedCity = data.name;
+    var cityDate = data.dt;
+    var convertedDate = cityDate * 1000;
+  })
+}
 
 
 //Handles search issue 
